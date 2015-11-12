@@ -5,7 +5,8 @@ function Thermostat() {
   this.minimumTemperature = 10;
   this.maximumTemperature = 32;
   this.powerSavingModeTemperature = 25;
-};
+  var apiTemp;
+}
 
   Thermostat.prototype.increase = function () {
     if (this.powerSavingMode === true && this.temperature === this.powerSavingModeTemperature) {
