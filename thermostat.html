@@ -5,44 +5,35 @@
     <title>Thermostat</title>
   </head>
   <body>
-    <script src="src/Thermostat.js"></script>
     <script src="jquery.js"></script>
+    <script src="src/Thermostat.js"></script>
     <script src="thermostat_jquery.js"></script>
-    <script t = new Thermostat()></script>
     <div>
       <p>Temperature</p>
-        <button id="increase">Up</button>
-        <button id="decrease">Down</button>
-        <button id="reset">Reset</button>
+      <button id="increase">Up</button>
+      <button id="decrease">Down</button>
+      <button id="reset">Reset</button>
     </div>
     <div>
       <span id="temperature"><span>
     </div>
     <div>
       <p>Power Saving Mode</p>
-        <button id="switch"></button>
-        <!-- <button id="switch_off"></button> -->
+      <button id="switch"></button>
     </div>
     <div>
       <span id="power_saving_mode"><span>
     </div>
 
-    <div>
-      <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script> -->
-      <script>
-      jQuery(document).ready(function($) {
-        $.ajax({
-          url: "http://api.openweathermap.org/data/2.5/weather/",
-          data: "q=London,uk&appid=2de143494c0b295cca9337e1e96b00e0",
-          success : function(parsed_json) {
-            var apiTemp = console.log(parsed_json.main.temp);
-
-        }
-        });
-      });
-      </script>
-    </div>
+    <form id="location_form">
+      Location: <br>
+      <input type="text" name="location" id="location">
+      <br>
+      <input type="submit" value="ok">
+    </form>
 
 
+    <p id="weatherTest">
+    </p>
   </body>
 </html>
