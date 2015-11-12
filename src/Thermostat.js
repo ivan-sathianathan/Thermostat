@@ -19,30 +19,48 @@ function Thermostat() {
 
   Thermostat.prototype.decrease = function () {
     if (this.temperature === this.minimumTemperature) {
-      throw "Cannot decrease temperature beyond minimum";
-    } else {
-      this.temperature -= 1;
-    }
+      throw "Cannot decrease temperature beyond minimum";}
+    else {
+      this.temperature -= 1;}
   };
 
-  Thermostat.prototype.powerSavingOn = function () {
-    this.powerSavingMode = true;
-  };
-
-  Thermostat.prototype.powerSavingOff = function () {
-    this.powerSavingMode = false;
+  Thermostat.prototype.powerSaving = function () {
+    this.powerSavingMode = !this.powerSavingMode;
   };
 
   Thermostat.prototype.resetTemperature = function () {
     this.temperature = 20;
   };
 
-  Thermostat.prototype.colour = function () {
+  Thermostat.prototype.energyUsage = function () {
     if (this.temperature < 18) {
-      return "green";
+      return "low-usage";
     } else if (this.temperature > 25) {
-      return "red";
+      return "high-usage";
     } else {
-      return "yellow";
-    };
+      return "medium-usage";
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   };
